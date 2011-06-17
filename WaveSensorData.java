@@ -36,4 +36,10 @@ public class WaveSensorData {
     public double getChannelValue(String name) throws Exception {
         return values.get(name).doubleValue();
     }
+    
+    public String toString() {
+        return getClass().getName() + "[" +
+            "time=" + time + ", " +
+            "values=" + values + "]";
+    }
 }
