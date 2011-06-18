@@ -81,7 +81,7 @@ public class WaveSensorDataShadow extends WaveSensorData {
     public double getChannelValue(String name) {
         Object returnVal;
         try {
-            returnVal = implGetTimeMethod.invoke(dataImpl, name);
+            returnVal = implGetChannelValueMethod.invoke(dataImpl, name);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
