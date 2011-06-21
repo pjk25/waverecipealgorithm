@@ -10,6 +10,7 @@ package edu.berkeley.androidwave.waverecipe.waverecipealgorithm;
 
 import java.lang.reflect.Method;
 import java.util.HashSet;
+import java.util.Map;
 
 public class WaveRecipeAlgorithmListenerShadow implements WaveRecipeAlgorithmListener {
     Object listenerImpl;
@@ -44,12 +45,11 @@ public class WaveRecipeAlgorithmListenerShadow implements WaveRecipeAlgorithmLis
     }
     
     /**
-     * WaveRecipeOutputData is shadowed on the other side of this call in the
-     * main apk space, so we pass it as a generic Object type here
+     * 
      */
-    public void handleRecipeData(Object data) {
+    public void handleRecipeData(long time, Map<String, Double>values) {
         try {
-            implHandleRecipeDataMethod.invoke(listenerImpl, data);
+            implHandleRecipeDataMethod.invoke(listenerImpl, time, values);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

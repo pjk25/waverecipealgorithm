@@ -8,6 +8,8 @@
 
 package edu.berkeley.androidwave.waverecipe.waverecipealgorithm;
 
+import java.util.Map;
+
 /**
  * WaveRecipeAlgorithmListener
  * 
@@ -15,8 +17,9 @@ package edu.berkeley.androidwave.waverecipe.waverecipealgorithm;
  * as an interface to simply what is presented to the recipe developer.
  */
 public interface WaveRecipeAlgorithmListener {
+    
     /**
-     * @param data should be of type WaveRecipeOutputData
+     * 
      */
-    public void handleRecipeData(Object data);
+    public void handleRecipeData(long time, Map<String, Double> values);
 }
