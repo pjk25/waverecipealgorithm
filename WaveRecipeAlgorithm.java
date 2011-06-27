@@ -8,6 +8,8 @@
 
 package edu.berkeley.androidwave.waverecipe.waverecipealgorithm;
 
+import java.util.Map;
+
 /**
  * WaveRecipeAlgorithm
  *
@@ -34,5 +36,5 @@ public interface WaveRecipeAlgorithm {
      */
     public boolean setWaveRecipeAlgorithmListener(Object listener);
     
-    public void ingestSensorData(Object sensorData);
+    public void ingestSensorData(long time, Map<String, Double>values);
 }
