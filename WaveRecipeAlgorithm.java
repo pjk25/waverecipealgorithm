@@ -34,7 +34,7 @@ public interface WaveRecipeAlgorithm {
      * 
      * @param listener should implement the WaveRecipeAlgorithmListener interface
      */
-    public boolean setWaveRecipeAlgorithmListener(Object listener);
+    public boolean setWaveRecipeAlgorithmListener(Object listener) throws Exception;
     
-    public void ingestSensorData(long time, Map<String, Double>values);
+    public void ingestSensorData(long time, Map<String, Double>values) throws Exception;
 }
