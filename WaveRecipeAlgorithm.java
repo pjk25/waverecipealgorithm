@@ -17,17 +17,24 @@ import java.util.Map;
  * computational component of a WaveRecipe.  Recipe creators must implement
  * this interface, and provide that implementation within their recipe.
  * 
- * Arguments are generic objects, because the dynamic loading used to
- * instantiate this algorithm in Android results in two separate namespaces.
- * Therefore, we essentially cannot cast or type easily at compile time.
+ * Arguments not included within Android are generic objects, because the
+ * dynamic loading used to instantiate this algorithm in Android results in
+ * two separate namespaces. Therefore, we essentially cannot cast or type
+ * easily at compile time.
  * 
  * For conviencience, recipe developers are provided with
- * WaveRecipeAlgorithmListenerShadow and WaveSensorDataShadow, which
- * essentially provide a runtime cast.
- * 
- * TODO: make a generic shadow class
+ * WaveRecipeAlgorithmListenerShadow calls methods across the distinct
+ * namespaces
  */
 public interface WaveRecipeAlgorithm {
+    
+    /**
+     * setAuthorizedMaxOutputRate
+     * 
+     * Provides a hint to the WaveRecipeAlgorithm of what data rate it is
+     * allowed to produce (without being throttled by AndroidWave)
+     */
+    public void setAuthorizedMaxOutputRate(double maxOutputRate);
     
     /**
      * setWaveRecipeAlgorithmListener
