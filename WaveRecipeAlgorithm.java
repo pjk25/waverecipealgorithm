@@ -34,7 +34,7 @@ public interface WaveRecipeAlgorithm {
      * Provides a hint to the WaveRecipeAlgorithm of what data rate it is
      * allowed to produce (without being throttled by AndroidWave)
      */
-    public void setAuthorizedMaxOutputRate(double maxOutputRate);
+    public void setAuthorizedMaxOutputRate(double maxOutputRate) throws Exception;
     
     /**
      * setWaveRecipeAlgorithmListener
