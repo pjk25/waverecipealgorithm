@@ -12,6 +12,13 @@ import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.Map;
 
+/**
+ * WaveRecipeAlgorithmListenerShadow
+ * 
+ * Shadow class for WaveRecipeAlgorithmListener, allowing a dynamically
+ * loaded recipe to forward its output back across the dynamic loading
+ * boundary to the main package
+ */
 public class WaveRecipeAlgorithmListenerShadow implements WaveRecipeAlgorithmListener {
     Object listenerImpl;
     

@@ -19,7 +19,7 @@ import java.util.Map;
 public interface WaveRecipeAlgorithmListener {
     
     /**
-     * 
+     * handleRecipeData
      */
     public void handleRecipeData(long time, Map<String, Double> values);
 }
